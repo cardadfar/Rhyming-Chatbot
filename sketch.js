@@ -12,6 +12,10 @@ var mute_button, bg, logo;
 var itc;
 var mousePos = [];
 
+function preload() {
+    itc = loadFont("brad.ttf");
+}
+
 function setup() {
     var width = 0.98*$(window).width();
     var height = 0.97*$(window).height();
@@ -20,7 +24,6 @@ function setup() {
     mute_button = loadImage("button_mute.png");
     logo = loadImage("logo.png");
     bg = loadImage("paper.jpg");
-    //itc = loadFont("brad.ttf");
     myRec = new p5.SpeechRec();
     voice = new p5.Speech();
     myRec.continuous = true;
@@ -72,11 +75,12 @@ function draw() {
      }
 
     fill(0);
-    noStroke();
-    textFont('Script MT Bold');
+    stroke(0);
+    strokeWeight(2);
+    textFont(itc);
     textSize(width/15);
     if(textWidth(recentWords) > 0.85*width)
-        textSize(width/25);
+        textSize(width/30);
     textStyle(BOLD);
     text(recentWords.toLowerCase(), width/2 - textWidth(recentWords)/2, 0.8*height);
 
@@ -143,6 +147,7 @@ function set_compRes(word) {
 }
 
 function print_spokenLines() {
+    strokeWeight(1);
     var start = 0.65*height - 15*spokenLines.length;
     textSize(12);
     for(var i = 0; i < spokenLines.length; i++)
