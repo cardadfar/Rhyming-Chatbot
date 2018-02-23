@@ -13,7 +13,7 @@ var itc;
 var mousePos = [];
 
 function preload() {
-    itc = loadFont("brad.ttf");
+    itc = loadFont("brad.TTF");
 }
 
 function setup() {
