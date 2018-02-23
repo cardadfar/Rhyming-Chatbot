@@ -13,7 +13,7 @@ var itc;
 var mousePos = [];
 
 function preload() {
-    itc = loadFont("brad.TTF");
+    //itc = loadFont("brad.TTF");
 }
 
 function setup() {
@@ -77,7 +77,7 @@ function draw() {
     fill(0);
     stroke(0);
     strokeWeight(2);
-    textFont(itc);
+    //textFont(itc);
     textSize(width/15);
     if(textWidth(recentWords) > 0.85*width)
         textSize(width/30);
